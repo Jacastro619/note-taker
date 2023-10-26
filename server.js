@@ -30,6 +30,16 @@ app.post("/api/notes", (req, res) => {
     title,
     text,
   };
+  const noteArray = db;
+  noteArray.push(newNote);
+
+  const stringNoteArray = JSON.stringify(noteArray);
+
+  fs.writeFile("./db/db.json", stringNoteArray, (err) => {
+    err ? console.log(err) : console.log(`${req.method} method was a success!`);
+  });
+
+  res.json(db);
 
   const response = {
     status: "success",
