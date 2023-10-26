@@ -65,7 +65,7 @@ app.post("/api/notes", (req, res) => {
   console.log(response);
 });
 
-// Delete request to delete specific note by id /api/notes/id
+// Delete request to delete specific note by id /api/notes/:id
 app.delete("/api/notes/:id", (req, res) => {
   const noteId = req.params.id;
   for (let i = 0; i < db.length; i++) {
