@@ -24,16 +24,21 @@ app.get("/api/notes", (req, res) => res.json(db));
 app.post("/api/notes", (req, res) => {
   console.info(`${req.method} request received to add a note`);
 
+  const id = Math.floor((1 + Math.random()) * 0x10000)
+    .toString(16)
+    .substring(1);
+
   const { title, text } = req.body;
 
   const newNote = {
     title,
     text,
+    id,
   };
-  const noteArray = db;
-  noteArray.push(newNote);
 
-  const stringNoteArray = JSON.stringify(noteArray);
+  db.push(newNote);
+
+  const stringNoteArray = JSON.stringify(db);
 
   fs.writeFile("./db/db.json", stringNoteArray, (err) => {
     err ? console.log(err) : console.log(`${req.method} method was a success!`);
@@ -47,6 +52,8 @@ app.post("/api/notes", (req, res) => {
   };
   console.log(response);
 });
+
+app.delete("/api/notes/:id", (req, res) => {});
 
 app.listen(PORT, () => {
   console.log(`listening at http://localhost:${PORT}`);
