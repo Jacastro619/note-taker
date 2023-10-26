@@ -14,23 +14,18 @@
 
 ## Description
 
-This will track notes that the user enters in the text areas.
+This note-taking app is like having a digital assistant for your thoughts and ideas. It's a handy tool that helps you jot down, save, and keep track of important notes. You can use it to capture everything from quick reminders to more elaborate notes, and it keeps everything neatly organized. With this app, you can easily create notes and delete them as needed.
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 - [Questions](#questions)
 - [Author Info](#author-info)
 
-## Installation
-
-Run 'npm i' in the terminal to install dependencies.
-
 ## Usage
 
-Add notes in the text areas and click on the save note button to save the note
+For the user to begin, click 'Get Started' on the home page. Once directed to the notes page, the user may enter a note title in the 'Note Title' text area. Underneath the note title, the user will need to enter the text of the note. Once a note has a title and text filled out, a 'Save Note' button will appear, and the user may save the note. It will then appear on the left side of the page as a list. When the user adds more notes, they will be displayed with the other saved notes. If the user wishes to delete a note, they will need to click on the delete icon next to the corresponding note they wish to delete. All notes will be persistently stored.
 
 ## License
 
